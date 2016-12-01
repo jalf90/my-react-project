@@ -1,0 +1,19 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "To get familiar with react",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jalf90/react-project.git"
+  },
+  "author": "João Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jalf90/react-project/issues"
+  },
+  "homepage": "https://github.com/jalf90/react-project#readme"
+}
