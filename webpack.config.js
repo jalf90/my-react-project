@@ -1,12 +1,12 @@
 var path = require('path');
  
 var config = {
-  context: path.join(__dirname, 'src'),
+  context: path.join("/Users/joaoferreira/Documents/Atom/react/my-project", 'src'),
   entry: [
     './main.js',
   ],
   output: {
-    path: path.join(__dirname, 'www'),
+    path: path.join("/Users/joaoferreira/Documents/Atom/react/my-project", 'www'),
     filename: 'bundle.js',
   },
   module: {
@@ -20,12 +20,12 @@ var config = {
   },
   resolveLoader: {
     root: [
-      path.join(__dirname, 'node_modules'),
+      path.join("/Users/joaoferreira/Documents/Atom/react/my-project", 'node_modules'),
     ],
   },
   resolve: {
     root: [
-      path.join(__dirname, 'node_modules'),
+      path.join("/Users/joaoferreira/Documents/Atom/react/my-project", 'node_modules'),
     ],
   },
 };
