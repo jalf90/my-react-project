@@ -1,9 +1,9 @@
 var path = require('path');
- 
+
 var config = {
   context: path.join("/Users/joaoferreira/Documents/Atom/react/my-project", 'src'),
   entry: [
-    './main.js',
+    './index.js',
   ],
   output: {
     path: path.join("/Users/joaoferreira/Documents/Atom/react/my-project", 'www'),
@@ -16,6 +16,10 @@ var config = {
         exclude: /node_modules/,
         loaders: ['babel'],
       },
+      {
+        test: /\.scss$/,
+        loaders: ["style-loader", "css-loader", "sass-loader"]
+      }
     ],
   },
   resolveLoader: {

@@ -6,8 +6,8 @@ var app = express();
 
 var compiler = webpack(webpackConfig);
 
-app.use(express.static("/Users/joaoferreira/Documents/Atom/react/my-project/"));
- 
+app.use(express.static("/Users/joaoferreira/Documents/Atom/react/my-project" + '/public'));
+
 app.use(webpackDevMiddleware(compiler, {
   hot: true,
   filename: 'bundle.js',
@@ -17,7 +17,7 @@ app.use(webpackDevMiddleware(compiler, {
   },
   historyApiFallback: true,
 }));
- 
+
 var server = app.listen(3000, function() {
   var host = server.address().address;
   var port = server.address().port;
