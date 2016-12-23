@@ -5,7 +5,7 @@ var Main = React.createClass({
   render: function() {
     return (
       <div className="home">
-        <img src={require('../shared/work-in-progress.png')} alt="Working on this"/>
+        <img src={require('../assets/work-in-progress.png')} alt="Working on this"/>
       </div>
     );
   }
