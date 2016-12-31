@@ -12,23 +12,35 @@ var Link = require('react-router-component').Link
 
 // Navbar
 var Navbar = React.createClass({
+  getInitialState: function(){
+    return {
+        expanded: false
+    }
+  },
   showOrHide: function() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
-        x.className += " responsive";
+      x.className += " responsive";
     } else {
-        x.className = "topnav";
+      x.className = "topnav";
+    }
+  },
+  collapse: function(value) {
+    this.setState({ expanded: value})
+    if(this.state.expanded === false) {
+      var x = document.getElementById("myTopnav");
+      x.className = "topnav";
     }
   },
 
   render: function() {
     return (
-      <div id="navbar">
+      <div id="navbar" onBlur={() => this.collapse(true)}>
         <ul className="topnav" id="myTopnav">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/news">News</Link></li>
-          <li><Link href="/login">Login</Link></li>
-          <li><Link href="/about">About</Link></li>
+          <li><Link href="/">Home {this.state.expanded}</Link></li>
+          <li><Link href="/news" onClick={() => this.collapse(false)}>News</Link></li>
+          <li><Link href="/login" onClick={() => this.collapse(false)}>Login</Link></li>
+          <li><Link href="/about" onClick={() => this.collapse(false)}>About</Link></li>
           <li className="icon">
             <a href="javascript:void(0)" onClick={this.showOrHide}> &#9776; </a>
           </li>
