@@ -1,6 +1,7 @@
 {
   "name": "my-project",
   "version": "1.0.0",
+  "private": true,
   "description": "To get familiar with react",
   "main": "index.js",
   "scripts": {
