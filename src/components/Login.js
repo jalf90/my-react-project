@@ -21,11 +21,11 @@ var Login = React.createClass({
           <form className="login-form">
             <div className="input-group">
               <input type="text" placeholder="Username" onChange={this.handleChange}/>
-              <!--<FaUser className="icon-position"/>-->
+              //<FaUser className="icon-position"/>
             </div>
             <div className="input-group">
               <input type="password" placeholder="Password" onChange={this.changePassword}/>
-              <!--<FaAsterisk className="icon-position"/>-->
+              //<FaAsterisk className="icon-position"/>
             </div>
             <button className="button-primary btn-login" type="button">Login</button>
           </form>
