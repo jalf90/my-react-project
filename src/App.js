@@ -55,10 +55,10 @@ var Content = React.createClass({
   render: function() {
     return (
       <Locations>
-        <Location path="/" handler={Main} />
+        /* <Location path="/" handler={Main} />
         <Location path="/login" handler={Login} />
         <Location path="/about" handler={About} />
-        <NotFound handler={NotFoundPage} />
+        <NotFound handler={NotFoundPage} /> */
       </Locations>
     )
   }

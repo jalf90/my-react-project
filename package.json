@@ -8,7 +8,7 @@
     "compile": "webpack",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-css": "node-sass --include-path scss src/index.scss public/main.css",
+    "build-css": "node-sass --include-path scss src/index.scss public/index.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "repository": {
