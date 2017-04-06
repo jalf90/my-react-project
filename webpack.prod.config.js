@@ -44,6 +44,11 @@ var config = {
         include: path.join(__dirname, 'src')
       },
       {
+        test: /\.css$/,
+        loaders: ["style-loader", "css-loader", "sass-loader"],
+        include: path.join(__dirname, 'src')
+      },
+      {
         test: /\.png$/,
         loader: 'file'
       },
