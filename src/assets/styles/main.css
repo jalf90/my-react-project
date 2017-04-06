@@ -1,0 +1,168 @@
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+.home {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: url("../working.jpg") no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.input-group {
+  position: relative;
+  color: #aaa;
+  font-size: 16px; }
+
+.input-group input {
+  padding-right: 35px !important;
+  background: #fcfcfc;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset; }
+
+.icon-position {
+  position: absolute;
+  top: 22px;
+  right: 30px; }
+
+.login {
+  top: 48px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  width: auto;
+  height: auto;
+  background-color: #c2c2d6; }
+
+.button-primary {
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+  width: 60px; }
+  .button-primary:hover {
+    background: #555;
+    cursor: pointer; }
+
+.login-box {
+  border-radius: 5px;
+  position: relative;
+  transform: translateY(50%);
+  margin: auto;
+  width: 300px;
+  height: 150px;
+  border: 15px solid #333;
+  background-color: white;
+  text-align: center; }
+  .login-box input, .login-box button {
+    display: block;
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px auto;
+    transform: translateY(50%); }
+    .login-box input:not(button), .login-box button:not(button) {
+      border: 2px solid #c2c2d6;
+      width: 90%;
+      padding: 10px; }
+
+/* Remove margins and padding from the list, and add a black background color */
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  z-index: 1; }
+
+/* Float the list items side by side */
+ul.topnav li {
+  float: left; }
+
+/* Style the links inside the list items */
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px; }
+
+/* Change background color of links on hover */
+ul.topnav li a:hover {
+  background-color: #555; }
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {
+  display: none; }
+
+/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+@media screen and (max-width: 680px) {
+  ul.topnav {
+    animation: 1s fadeOut; }
+  ul.topnav li:not(:first-child) {
+    display: none; }
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block; }
+  @keyframes fadeOut {
+    0% {
+      height: 190px; }
+    100% {
+      height: 50px; } } }
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+@media screen and (max-width: 680px) {
+  ul.topnav.responsive {
+    position: relative;
+    animation: 0.5s fadeIn; }
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0; }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline; }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left; }
+  @keyframes fadeIn {
+    0% {
+      height: 50px; }
+    100% {
+      height: 190px; } } }
+
+.icon {
+  height: 10px;
+  width: auto; }
+
+.about {
+  text-align: center;
+  font-size: 11px; }
+  .about img.profile {
+    margin: 5px 5px 0 5px;
+    border-radius: 50px;
+    height: auto;
+    width: 50%;
+    max-width: 400px; }
+  .about a {
+    display: block;
+    text-decoration: none; }
+  .about label {
+    display: block; }
+    .about label.name {
+      font-weight: bold;
+      font-size: 20px; }
+    .about label.position {
+      font-weight: bold;
+      font-size: 13px; }

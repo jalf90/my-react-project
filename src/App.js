@@ -1,81 +1,19 @@
-import React from 'react';
-import Main from './components/Main.js';
-import Login from './components/Login.js';
-import About from './components/About.js';
-import NotFoundPage from './components/NotFoundPage.js';
+const Server = require('./server.js')
+const port = (process.env.PORT || 8080)
+const app = Server.app()
 
-var Router = require('react-router-component')
-var Locations = Router.Locations
-var Location = Router.Location
-var NotFound = Router.NotFound
-var Link = require('react-router-component').Link
+if (process.env.NODE_ENV !== 'production') {
+  const webpack = require('webpack')
+  const webpackDevMiddleware = require('webpack-dev-middleware')
+  const webpackHotMiddleware = require('webpack-hot-middleware')
+  const config = require('../webpack.dev.config.js')
+  const compiler = webpack(config)
 
-// Navbar
-var Navbar = React.createClass({
-  getInitialState: function(){
-    return {
-        expanded: false
-    }
-  },
-  showOrHide: function() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  },
-  collapse: function(value) {
-    this.setState({ expanded: value})
-    if(this.state.expanded === false) {
-      var x = document.getElementById("myTopnav");
-      x.className = "topnav";
-    }
-  },
+  app.use(webpackHotMiddleware(compiler))
+  app.use(webpackDevMiddleware(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+  }))
+}
 
-  render: function() {
-    return (
-      <div id="navbar" onBlur={() => this.collapse(true)}>
-        <ul className="topnav" id="myTopnav">
-          <li><Link href="/">Home {this.state.expanded}</Link></li>
-          <li><Link href="/news" onClick={() => this.collapse(false)}>News</Link></li>
-          <li><Link href="/login" onClick={() => this.collapse(false)}>Login</Link></li>
-          <li><Link href="/about" onClick={() => this.collapse(false)}>About</Link></li>
-          <li className="icon">
-            <a href="javascript:void(0)" onClick={this.showOrHide}> &#9776; </a>
-          </li>
-        </ul>
-      </div>
-    )
-  }
-})
-
-var Content = React.createClass({
-
-  render: function() {
-    return (
-      <Locations>
-        /* <Location path="/" handler={Main} />
-        <Location path="/login" handler={Login} />
-        <Location path="/about" handler={About} />
-        <NotFound handler={NotFoundPage} /> */
-      </Locations>
-    )
-  }
-})
-
-var App = React.createClass({
-
-  render: function() {
-    return (
-      <div>
-        <header>
-          <Navbar/>
-        </header>
-        <Content />
-      </div>
-    )
-  }
-})
-
-export default App;
+app.listen(port)
