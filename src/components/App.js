@@ -72,7 +72,6 @@ var App = React.createClass({
         <header>
           <Navbar/>
         </header>
-        <Content />
       </div>
     )
   }
