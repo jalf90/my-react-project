@@ -7,7 +7,7 @@
   "scripts": {
     "compile": "webpack",
     "start": "react-scripts start",
-    "build": "cross-env NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
+    "build": "react-scripts build",
     "build-css": "node-sass --include-path scss src/index.scss src/assets/styles/main.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
