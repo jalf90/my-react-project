@@ -1,11 +1,12 @@
 import React from 'react';
+import wallpaper from '../assets/work-in-progress.png';
 
 // Container
 var Main = React.createClass({
   render: function() {
     return (
       <div className="home">
-        <img src={require('../assets/work-in-progress.png')} alt="Working on this"/>
+        <img src={wallpaper} alt="Working on this"/>
       </div>
     );
   }
