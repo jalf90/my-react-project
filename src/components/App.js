@@ -37,7 +37,7 @@ var Navbar = React.createClass({
     return (
       <div id="navbar" onBlur={() => this.collapse(true)}>
         <ul className="topnav" id="myTopnav">
-          <li><Link href="/">Home {this.state.expanded}</Link></li>
+          <li><Link href="/">Home</Link></li>
           <li><Link href="/news" onClick={() => this.collapse(false)}>News</Link></li>
           <li><Link href="/login" onClick={() => this.collapse(false)}>Login</Link></li>
           <li><Link href="/about" onClick={() => this.collapse(false)}>About</Link></li>
